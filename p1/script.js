@@ -31,6 +31,14 @@ function checkInput(inputArr){
 function getFieldName(input){
     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
+checkLength(min,max,input){
+
+}
+passwordMatch(input1.value,input2.value){
+    if (input1.value!==input2.value){
+        showError(password2,'Passwords do not match');
+    }
+}
 
 function validateEmail(email){
     const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -43,5 +51,7 @@ form.addEventListener("submit", function(e) {
   e.preventDefault();
 
   checkInput([username,email,password,password2]);
+  checkLength(3,25,username);
+  passwordMatch();
 
 });
